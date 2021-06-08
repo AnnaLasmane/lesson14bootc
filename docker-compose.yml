@@ -8,5 +8,15 @@ services:
         volumes:
             - .:/usr/src/app
         ports: 
-            - 8070:8070
+            - 8071:8071
         working_dir: /usr/src/app
+        links:
+            - mongodb
+    mongodb:
+        image: mongo
+        volumes:
+            - mongodb:/data/db
+        ports:
+            - 27017:27017
+volumes:
+    mongodb:
