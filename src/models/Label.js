@@ -1,18 +1,14 @@
 import mongoose from 'mongoose';
 
 // {"title": "foo", "isCompleted": true, "labels": [123, 321]}
-const taskSchema = mongoose.Schema({
+const labelSchema = mongoose.Schema({
     title: {
         type: String,
         required: true,
     },
-    isCompleted: {
-        type: Boolean,
-        default: false,
-    },
-    labels: {
-        type: Array,
-        default: [],
+    color: {
+        type: String,
+        required: true,
     },
     createdAt: {
         type: Date,
@@ -20,6 +16,6 @@ const taskSchema = mongoose.Schema({
     }
 });
 
-const task = mongoose.model('Tasks', taskSchema);
+const label = mongoose.model('Labels', labelSchema);
 
-export default task;
+export default label;
