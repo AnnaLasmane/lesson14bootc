@@ -15,8 +15,10 @@ server.use(bodyParser.json());
 server.use('/tasks', taskRoutes);
 server.use('/labels', labelRoutes);
 
+
 mongoose.connect(
-    process.env.MONGOOSE_CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true },
+    process.env.MONGOOSE_CONNECTION_URL, 
+    {useNewUrlParser: true, useUnifiedTopology: true},
     (err) => {
         if (err) {
             console.log(`Could not connect to the database:`, err);
